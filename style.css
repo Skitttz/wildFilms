@@ -354,8 +354,21 @@ p {
 @media (max-width: 960px) {
   .content {
     max-width: 400px;
-    padding: 0px;
+    padding: 15px;
   }
+
+  .titulo h1 {
+    font-size: 3rem;
+  }
+
+  .anuncios img {
+    max-width: 200px;
+  }
+
+  .anuncio-item {
+    margin: 0 auto;
+  }
+
   .estrutura {
     grid-template-columns: 100%;
     grid-template-areas:
