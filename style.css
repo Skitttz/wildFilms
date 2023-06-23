@@ -1,0 +1,387 @@
+body,
+p,
+h1,
+ul,
+li,
+blockquote {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Vollkorn", Georgia, serif;
+  background-color: #03001c;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo img {
+  width: 300px;
+}
+
+.sidenav img {
+  max-width: 100%;
+}
+
+.anuncios img {
+  max-width: 100px;
+}
+
+.content img {
+  max-width: 520px;
+  border-radius: 5px;
+}
+
+.imagem-2 {
+  max-width: 800px;
+}
+
+/* GRID GERAL */
+
+.estrutura {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+  grid-template-areas:
+    "header header header"
+    "sidenav content anuncios"
+    "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+
+  background: linear-gradient(135deg, #e3f2c1, #b3c99c);
+
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header nav a {
+  display: block;
+  padding: 10px;
+  color: black;
+  font-size: 1.3em;
+  background-color: #e3f2c1;
+  border-radius: 5px;
+}
+
+.header nav a:hover {
+  background-color: #b3c99c;
+  color: gray;
+  transition: 0.1s;
+}
+
+.header li + li {
+  margin-left: 30px;
+}
+
+@media (max-width: 960px) {
+  .header {
+    grid-template-columns: auto;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+  .header nav a {
+    align-self: center;
+    font-size: 1em;
+  }
+  .header li + li {
+    margin-left: 10px;
+  }
+}
+
+.sidenav {
+  grid-area: sidenav;
+  padding: 30px;
+  margin-left: 30px;
+}
+
+.sidenav li a {
+  display: block;
+  min-width: 60px;
+  max-width: 100px;
+  margin: 0 auto 30px auto;
+  background: #03001c;
+  padding: 20px;
+  border-radius: 5px;
+
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  transition: 0.1s ease-out;
+}
+
+.sidenav a:hover {
+  transition: 0.1s;
+  background: #e3f2c1;
+}
+
+@media (max-width: 960px) {
+  .sidenav {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .sidenav::after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav ul li {
+    flex: 1 0 60px;
+  }
+
+  .sidenav {
+    padding: 0 30px;
+  }
+
+  .sidenav li a {
+    margin: 30px 30px 30px 0px;
+  }
+}
+
+.content {
+  grid-area: content;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.col-wide {
+  grid-column: 1/-1;
+}
+
+.imagem-1 {
+  grid-row: span 2;
+  align-self: end;
+
+  max-width: 100%;
+}
+
+.imagem-2 {
+  justify-self: center;
+  align-self: start;
+}
+
+.imagem-3 {
+  justify-self: center;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: justify;
+  color: rgba(255, 255, 255, 1);
+}
+
+#pequeno {
+  font-size: 0.875rem;
+}
+
+.informacoes p + p {
+  margin-top: 30px;
+}
+
+.titulo h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.titulo span {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: white;
+}
+
+.caracteristicas {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 320px;
+}
+
+.caracteristicas > div {
+  width: 120px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid wheat;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+
+.caracteristicas span {
+  display: block;
+  color: white;
+}
+
+.caracteristicas span:nth-child(2) {
+  color: black;
+}
+
+.caracteristicas > div:first-child {
+  margin-right: 30px;
+}
+
+.numero {
+  color: whitesmoke;
+
+  font-size: 3em;
+  line-height: 1;
+  margin: 10px auto;
+}
+
+.rotulo {
+  background: ghostwhite;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
+}
+
+.destaque {
+  font-size: 0.875em;
+  color: #0b2447;
+  max-width: 16em;
+}
+
+.citacao,
+.atributos {
+  align-self: start;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #8884ee, #b07dfb);
+}
+
+.citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.atributos li {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.125rem;
+  padding: 15px;
+}
+
+.atributos li + li {
+  border-top: 2px solid wheat;
+}
+
+.anuncios {
+  grid-area: anuncios;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.anuncios img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #576cbc, #03001c);
+}
+
+.footer p {
+  color: gainsboro;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 1300px) {
+  .estrutura {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav anuncios anuncios"
+      "footer footer footer";
+  }
+
+  .caracteristicas {
+    font-size: 0.875em;
+    max-width: 50%;
+    max-height: 30%;
+    margin-left: 0px;
+  }
+
+  .imagem-1 {
+    max-width: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .estrutura {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "content"
+      "anuncios"
+      "footer";
+  }
+
+  .header img {
+    margin: 0 auto;
+  }
+
+  .header nav ul {
+    justify-content: center;
+  }
+
+  .caracteristicas {
+    font-size: 0.875em;
+    width: 200px;
+    max-height: 10%;
+    margin: 0 auto;
+  }
+
+  .rotulo {
+    font-size: 0.825em;
+  }
+
+  .content {
+    grid-template-columns: auto;
+  }
+}
